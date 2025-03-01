@@ -1,0 +1,136 @@
+body {
+  background-color: #f8f9fa;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+  color: #212529;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+p{ margin-bottom: 0.625rem; }
+
+/*оболочка*/
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/*прижать footer вниз*/
+.wrapper > main {
+  flex: 1 1 auto;
+}
+
+/*ограничивающий контейнер из bootstrap*/
+/*
+Стили будут применяться ко всем классам содержащим *__container
+Например header__container, page__container и т.д.
+*/
+[class*=__container] {
+  --g-x: 0.75rem;
+  margin: 0 auto;
+  padding: 0 var(--g-x); /* отступы безопасности по 12px слева и справа */
+  width: 100%;
+}
+@media (min-width: 576px) {
+  [class*=__container] {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  [class*=__container] {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  [class*=__container] {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  [class*=__container] {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  [class*=__container] {
+    max-width: 1320px;
+  }
+}
+[class*=__row] {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-right: calc(-1 * var(--g-x)); /* (-0.75) отступ безопасности у __container */
+  margin-left: calc(-1 * var(--g-x)); /* (-0.75) отступ безопасности у __container */
+}
+[class*=__row] > * {
+  flex-shrink: 0; /* flex элементу запрещено уменьшаться его базового размера */
+  width: 100%;
+  max-width: 100%;
+  padding-right: var(--g-x); /* отступ безопасности у __container */
+  padding-left: var(--g-x); /* отступ безопасности у __container */
+  margin-top: 0;
+}
+[class*=__column-12]{
+	flex: 0 0 auto;
+	width: 100%
+}
+/* =============================================================================== */
+
+/* 
+
+	clamp(fontMinpx, calc(fontMinpx + (fontMax - fontMin) * ((100vw - widthMinpx) / (widthMax - widthMin))), fontMaxpx);
+
+ */
+.page__title{
+	font-size: clamp(24px, calc(24px + (64 - 24) * ((100vw - 320px) / (1320 - 320))), 64px);
+	text-align: center;
+}
+
+.footer {
+  height: 2.25rem;
+}
+.footer__container {
+  height: 100%;
+}
+.footer__container span {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.footer__copyright { /*отцентрировать copyright по середине и центру*/
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* ВОТ ЭТА ФУНКЦИЯ У МЕНЯ СРАБОТАЛА КАК НАДО */
+	
